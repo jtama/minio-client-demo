@@ -1,0 +1,70 @@
+### Sending content README
+POST http://localhost:8080/minio
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="README.md"
+Content-Type: text/markdown
+
+< ./README.md
+--WebAppBoundary--
+
+### Sending content pom.xml
+POST http://localhost:8080/minio
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="pom.xml"
+Content-Type: text/xml
+
+< ./pom.xml
+--WebAppBoundary--
+
+### Listing content
+GET http://localhost:8080/minio
+
+### Retrieving file NOP
+GET http://localhost:8080/minio/UNKNOWN.md
+
+### Retrieving file
+GET http://localhost:8080/minio/README.md
+
+
+
+
+
+
+
+
+
+### An other best to dust
+### Sending content README
+POST http://localhost:8080/another-minio
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="README.md"
+Content-Type: text/markdown
+
+< ./README.md
+--WebAppBoundary--
+
+### Sending content pom.xml
+POST http://localhost:8080/another-minio
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="pom.xml"
+Content-Type: text/xml
+
+< ./pom.xml
+--WebAppBoundary--
+
+### Listing content
+GET http://localhost:8080/another-minio
+
+### Retrieving file NOP
+GET http://localhost:8080/minio/UNKNOWN.md
+
+### Retrieving file
+GET http://localhost:8080/minio/README.md
